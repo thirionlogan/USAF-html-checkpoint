@@ -11,3 +11,5 @@ You can add movies by going to scripts.js and adding an object with this format:
 }
 ```
 to the `movies` array.
+<img src="HomePage.png" alt="Project Images" />
+<img src="LoginPage.png" alt="Project Images" />
