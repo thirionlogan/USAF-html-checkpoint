@@ -2,10 +2,11 @@ const movies = [
   {
     name: 'Poltergeist',
     imagesrc: 'https://thumbs.gfycat.com/FixedFriendlyBilby-small.gif',
-    released: '',
-    tags: [''],
-    cast: [''],
-    description: '',
+    released: '4 June 1982',
+    tags: ['Horror', 'Thriller'],
+    cast: ['JoBeth Williams', "Heather O'Rourke", 'Craig T. Nelson'],
+    description:
+      'A young family are visited by ghosts in their home. At first the ghosts appear friendly, moving objects around the house to the amusement of everyone, then they turn nasty and start to terrorise the family before they "kidnap" the youngest daughter.',
   },
   {
     name: 'Mad Max Fury Road',
@@ -119,7 +120,7 @@ const movies = [
 ];
 
 function navigateToPage(page) {
-  const pages = ['loginPage', 'browsePage', 'movieDetails'];
+  const pages = ['loginPage', 'browsePage', 'movieDetailsPage'];
   pages
     .filter((value) => {
       return page !== value;
@@ -134,15 +135,28 @@ function navigateToPage(page) {
 function navigateToMoviePage(movie) {
   var movieDetails = document.getElementById('movieDetails');
   movieDetails.innerHTML = '';
-  movieDetails.innerText = 'HELLO';
   //poster
   var movieImage = document.createElement('img');
   movieImage.loading = 'lazy';
   movieImage.alt = `${movie.name} poster`;
   movieImage.src = movie.imagesrc;
   movieDetails.appendChild(movieImage);
-  //
-
+  //title
+  var movieTitle = document.createElement('h1');
+  movieTitle.innerText = movie.name;
+  movieDetails.appendChild(movieTitle);
+  // released
+  var movieReleased = document.createElement('h2');
+  movieReleased.innerText = `Released ${movie.released}`;
+  movieDetails.appendChild(movieReleased);
+  // tags
+  var movieTags = document.createElement('P');
+  movieTags.innerText = `${movie.tags.join(', ')} | ${movie.cast.join(', ')}`;
+  movieDetails.appendChild(movieTags);
+  // description
+  var movieDescription = document.createElement('P');
+  movieDescription.innerText = movie.description;
+  movieDetails.appendChild(movieDescription);
   navigateToPage('movieDetailsPage');
 }
 
