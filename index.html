@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="styles.css?v=1.0" />
   </head>
-
+  <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
   <body>
     <script src="scripts.js"></script>
     <header class="pageHeader">
@@ -24,7 +24,13 @@
       </form>
     </header>
     <main id="content">
-      <form id="loginPage" class="loginPage">
+      <form
+        id="loginPage"
+        class="loginPage"
+        onsubmit="navigateToPage('browsePage')"
+        action=""
+        target="dummyframe"
+      >
         <h2>Login</h2>
         <label for="email">Email:</label><br />
         <input type="text" name="email" id="email" required /><br />
