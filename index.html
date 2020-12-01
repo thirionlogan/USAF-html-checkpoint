@@ -8,17 +8,17 @@
     <meta name="author" content="Logan Thirion" />
 
     <link rel="stylesheet" href="styles.css?v=1.0" />
+    <script src="scripts.js"></script>
   </head>
   <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
-  <body>
-    <script src="scripts.js"></script>
+  <body onload="loadResources()">
     <header class="pageHeader">
       <nav>
         <h1>GMDB</h1>
         <button onclick="navigateToPage('browsePage')"><h3>Home</h3></button>
         <button onclick="navigateToPage('loginPage')"><h3>Login</h3></button>
       </nav>
-      <form>
+      <form action="" target="dummyframe">
         <input type="search" placeholder="Search" />
         <button type="submit">Search</button>
       </form>
@@ -38,57 +38,15 @@
         <input type="password" name="password" id="password" required /><br />
         <button type="submit">Login</button>
       </form>
-      <div id="browsePage" class="browsePage hide">
-        <img
-          src="https://i.imgur.com/L68FtMA.jpg"
-          loading="lazy"
-          alt="Deadpool poster"
-        />
-        <img
-          src="https://i.imgur.com/lweGxbJ.jpeg"
-          loading="lazy"
-          alt="Avengers Infinity War poster"
-        />
-        <img
-          src="https://i.imgur.com/5cAQzN6.jpeg"
-          loading="lazy"
-          alt="batman poster"
-        />
-        <img
-          src="https://i.imgur.com/3Mi1ary.jpeg"
-          loading="lazy"
-          alt="Logan poster"
-        />
-        <img
-          src="https://i.imgur.com/72jbxZ5.gif"
-          loading="lazy"
-          alt="Empire Strikes Back poster"
-        />
-        <img
-          src="https://i.imgur.com/lGA6z28.jpeg"
-          loading="lazy"
-          alt="A New Hope poster"
-        />
-        <img
-          src="https://i.imgur.com/W52kzdD.jpeg"
-          loading="lazy"
-          alt="Return of the king poster"
-        />
-        <img
-          src="https://i.imgur.com/r681w9w.png"
-          loading="lazy"
-          alt="Kanto Showdown poster"
-        />
-        <img
-          src="https://m.media-amazon.com/images/M/MV5BMTMyMTE3OTk3NF5BMl5BanBnXkFtZTcwOTkwNDc3NA@@._V1_.jpg"
-          loading="lazy"
-          alt="Wargames poster"
-        />
-        <img
-          src="https://i.pinimg.com/originals/e4/5b/a2/e45ba221e747798e48e153836b2dbf5b.jpg"
-          loading="lazy"
-          alt="Pulp Fiction poster"
-        />
+      <div id="browsePage" class="browsePage hide"></div>
+      <div id="movieDetailsPage" class="movieDetails hide">
+        <button onclick="navigateToPage('browsePage')">Back to results</button>
+        <div id="movieDetails"></div>
+        <form action="" target="dummyframe">
+          <label for="comment">Leave a comment:</label><br />
+          <input type="text" name="comment" id="comment" required /><br />
+          <button type="submit">Submit</button>
+        </form>
       </div>
     </main>
   </body>
