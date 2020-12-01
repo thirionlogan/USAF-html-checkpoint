@@ -78,6 +78,36 @@ const movies = [
       "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
   },
   {
+    name: 'Star Wars: Episode I - The Phantom Menace',
+    imagesrc:
+      'https://m.media-amazon.com/images/M/MV5BYTRhNjcwNWQtMGJmMi00NmQyLWE2YzItODVmMTdjNWI0ZDA2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg',
+    released: '19 May 1999',
+    tags: ['Action', 'Adventure', 'Fantasy'],
+    cast: ['Ewan McGregor', 'Liam Neeson', 'Natalie Portman'],
+    description:
+      'Two Jedi escape a hostile blockade to find allies and come across a young boy who may bring balance to the Force, but the long dormant Sith resurface to claim their original glory.',
+  },
+  {
+    name: 'Star Wars: Episode II - Attack of the Clones',
+    imagesrc:
+      'https://m.media-amazon.com/images/M/MV5BMDAzM2M0Y2UtZjRmZi00MzVlLTg4MjEtOTE3NzU5ZDVlMTU5XkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_.jpg',
+    released: '16 May 2002',
+    tags: ['Action', 'Adventure', 'Fantasy'],
+    cast: [' Hayden Christensen', 'Natalie Portman', 'Ewan McGregor'],
+    description:
+      'Ten years after initially meeting, Anakin Skywalker shares a forbidden romance with Padmé Amidala, while Obi-Wan Kenobi investigates an assassination attempt on the senator and discovers a secret clone army crafted for the Jedi.',
+  },
+  {
+    name: 'Star Wars: Episode III - Revenge of the Sith',
+    imagesrc:
+      'https://images.moviesanywhere.com/ae548928d15ceddbb6e1a6d16707fafd/8f079b10-aff5-4f2b-82f0-789ae7fedaea.jpg',
+    released: '19 May 2005',
+    tags: ['Action', 'Adventure', 'Fantasy'],
+    cast: [' Hayden Christensen', 'Natalie Portman', 'Ewan McGregor'],
+    description:
+      'Three years into the Clone Wars, the Jedi rescue Palpatine from Count Dooku. As Obi-Wan pursues a new threat, Anakin acts as a double agent between the Jedi Council and Palpatine and is lured into a sinister plan to rule the galaxy.',
+  },
+  {
     name: 'Star Wars: Episode IV - A New Hope',
     imagesrc: 'https://i.imgur.com/lGA6z28.jpeg',
     released: '25 May 1977',
@@ -94,6 +124,16 @@ const movies = [
     cast: ['Mark Hamill', 'Harrison Ford', 'Carrie Fisher'],
     description:
       'After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued by Darth Vader and a bounty hunter named Boba Fett all over the galaxy.',
+  },
+  {
+    name: 'Star Wars: Episode VI - Return of the Jedi',
+    imagesrc:
+      'https://m.media-amazon.com/images/M/MV5BOWZlMjFiYzgtMTUzNC00Y2IzLTk1NTMtZmNhMTczNTk0ODk1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_UY1200_CR72,0,630,1200_AL_.jpg',
+    released: '25 May 1983',
+    tags: ['Action', 'Adventure', 'Fantasy'],
+    cast: ['Mark Hamill', 'Harrison Ford', 'Carrie Fisher'],
+    description:
+      "After a daring mission to rescue Han Solo from Jabba the Hutt, the Rebels dispatch to Endor to destroy the second Death Star. Meanwhile, Luke struggles to help Darth Vader back from the dark side without falling into the Emperor's trap.",
   },
   {
     name: 'Logan',
