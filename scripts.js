@@ -10,3 +10,5 @@ function navigateToPage(page) {
   var page = document.getElementById(page);
   page.classList.remove('hide');
 }
+// On load
+console.log('Please enable javascript to run this webpage.');
