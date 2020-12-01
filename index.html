@@ -1,16 +1,42 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
 
-  <title>HTML Checkpoint</title>
-  <meta name="description" content="HTML Checkpoint">
-  <meta name="author" content="Logan Thirion">
+    <title>HTML Checkpoint</title>
+    <meta name="description" content="HTML Checkpoint" />
+    <meta name="author" content="Logan Thirion" />
 
-  <link rel="stylesheet" href="styles.css?v=1.0">
+    <link rel="stylesheet" href="styles.css?v=1.0" />
+  </head>
 
-</head>
-
-<body>
-  <script src="scripts.js"></script>
-</body>
+  <body>
+    <script src="scripts.js"></script>
+    <header class="pageHeader">
+      <nav>
+        <h1>GMDB</h1>
+        <button onclick="navigateToPage('browsePage')"><h3>Home</h3></button>
+        <button onclick="navigateToPage('loginPage')"><h3>Login</h3></button>
+      </nav>
+      <form>
+        <input type="search" placeholder="Search" />
+        <button type="submit">Search</button>
+      </form>
+    </header>
+    <main id="content">
+      <form id="loginPage" class="loginPage">
+        <h2>Login</h2>
+        <label for="email">Email:</label><br />
+        <input type="text" name="email" id="email" required /><br />
+        <label for="password">Password:</label><br />
+        <input type="password" name="password" id="password" required /><br />
+        <button type="submit">Login</button>
+      </form>
+      <div id="browsePage" class="browsePage hide">
+        Browse Page
+      </div>
+    </main>
+  </body>
 </html>
+<!-- browse -->
+<!-- Leave a comment -->
