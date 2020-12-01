@@ -155,22 +155,25 @@ function navigateToMoviePage(movie) {
   movieImage.alt = `${movie.name} poster`;
   movieImage.src = movie.imagesrc;
   movieDetails.appendChild(movieImage);
+  //meta
+  var movieMeta = document.createElement('DIV');
+  movieDetails.appendChild(movieMeta);
   //title
   var movieTitle = document.createElement('h1');
   movieTitle.innerText = movie.name;
-  movieDetails.appendChild(movieTitle);
+  movieMeta.appendChild(movieTitle);
   // released
   var movieReleased = document.createElement('h2');
   movieReleased.innerText = `Released ${movie.released}`;
-  movieDetails.appendChild(movieReleased);
+  movieMeta.appendChild(movieReleased);
   // tags
   var movieTags = document.createElement('P');
   movieTags.innerText = `${movie.tags.join(', ')} | ${movie.cast.join(', ')}`;
-  movieDetails.appendChild(movieTags);
+  movieMeta.appendChild(movieTags);
   // description
   var movieDescription = document.createElement('P');
   movieDescription.innerText = movie.description;
-  movieDetails.appendChild(movieDescription);
+  movieMeta.appendChild(movieDescription);
   navigateToPage('movieDetailsPage');
 }
 

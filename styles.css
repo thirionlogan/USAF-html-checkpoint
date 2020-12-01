@@ -59,6 +59,28 @@ main {
   max-height: 600px;
   max-width: 400px;
 }
+.movieDetailsPage {
+  margin: 0 3% 0 3%;
+}
+
+.movieDetailsPage p,
+.movieDetailsPage input,
+.movieDetailsPage h1,
+.movieDetailsPage h2 {
+  margin-bottom: 1rem;
+}
+
+.movieDetails {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0 1rem 0;
+}
+
+.movieDetails img {
+  max-height: 600px;
+  max-width: 400px;
+  margin-right: 16px;
+}
 
 .hide {
   display: none;
