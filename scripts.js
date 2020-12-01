@@ -69,6 +69,26 @@ const movies = [
       'Scientists genetically create a new Pokémon, Mewtwo, but the results are horrific and disastrous.',
   },
   {
+    name: 'The Lord of the Rings: The Fellowship of the Ring',
+    imagesrc:
+      'https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg',
+    released: '19 December 2001',
+    tags: ['Action', 'Adventure', 'Drama'],
+    cast: ['Elijah Wood', 'Orlando Bloom', 'Ian McKellen'],
+    description:
+      'A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.',
+  },
+  {
+    name: 'The Lord of the Rings: The Two Towers',
+    imagesrc:
+      'https://m.media-amazon.com/images/M/MV5BZGMxZTdjZmYtMmE2Ni00ZTdkLWI5NTgtNjlmMjBiNzU2MmI5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg',
+    released: '18 December 2002',
+    tags: ['Action', 'Adventure', 'Drama'],
+    cast: ['Elijah Wood', 'Viggo Mortensen', 'Ian McKellen'],
+    description:
+      "While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron's new ally, Saruman, and his hordes of Isengard.",
+  },
+  {
     name: 'The Lord of the Rings: The Return of the King',
     imagesrc: 'https://i.imgur.com/W52kzdD.jpeg',
     released: '17 December 2003',
