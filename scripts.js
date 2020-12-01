@@ -131,6 +131,16 @@ const movies = [
     description:
       'A wisecracking mercenary gets experimented on and becomes immortal but ugly, and sets out to track down the man who ruined his looks.',
   },
+  {
+    name: 'American Psycho',
+    imagesrc:
+      'https://images-na.ssl-images-amazon.com/images/I/71LyK5CqyeL._AC_SL1424_.jpg',
+    released: '14 April 2000',
+    tags: ['Comedy', 'Crime', 'Drama '],
+    cast: ['Christian Bale', 'Justin Theroux', 'Josh Lucas'],
+    description:
+      'A wealthy New York City investment banking executive, Patrick Bateman, hides his alternate psychopathic ego from his co-workers and friends as he delves deeper into his violent, hedonistic fantasies.',
+  },
 ];
 
 function navigateToPage(page) {
@@ -178,8 +188,28 @@ function navigateToMoviePage(movie) {
   navigateToPage('movieDetailsPage');
 }
 
+function shuffle(array) {
+  var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
 function loadResources() {
-  movies.forEach((movie) => {
+  shuffle(movies).forEach((movie) => {
     var movieElement = document.createElement('img');
     movieElement.src = movie.imagesrc;
     movieElement.loading = 'lazy';
