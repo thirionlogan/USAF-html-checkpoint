@@ -149,31 +149,32 @@ function navigateToPage(page) {
 function navigateToMoviePage(movie) {
   var movieDetails = document.getElementById('movieDetails');
   movieDetails.innerHTML = '';
-  //poster
+
   var movieImage = document.createElement('img');
   movieImage.loading = 'lazy';
   movieImage.alt = `${movie.name} poster`;
   movieImage.src = movie.imagesrc;
   movieDetails.appendChild(movieImage);
-  //meta
+
   var movieMeta = document.createElement('DIV');
   movieDetails.appendChild(movieMeta);
-  //title
+
   var movieTitle = document.createElement('h1');
   movieTitle.innerText = movie.name;
   movieMeta.appendChild(movieTitle);
-  // released
+
   var movieReleased = document.createElement('h2');
   movieReleased.innerText = `Released ${movie.released}`;
   movieMeta.appendChild(movieReleased);
-  // tags
+
   var movieTags = document.createElement('P');
   movieTags.innerText = `${movie.tags.join(', ')} | ${movie.cast.join(', ')}`;
   movieMeta.appendChild(movieTags);
-  // description
+
   var movieDescription = document.createElement('P');
   movieDescription.innerText = movie.description;
   movieMeta.appendChild(movieDescription);
+
   navigateToPage('movieDetailsPage');
 }
 
