@@ -17,7 +17,7 @@
         <h1>GMDB</h1>
         <button
           id="homeButton"
-          onclick="navigateToPage('browsePage','homeButton')"
+          onclick="navigateToPage('browsePage','homeButton'); clearSearch();"
         >
           <h3>Home</h3>
         </button>
@@ -29,7 +29,11 @@
           <h3>Login</h3>
         </button>
       </nav>
-      <form action="" target="dummyframe" onsubmit="loadResources()">
+      <form
+        action=""
+        target="dummyframe"
+        onsubmit="loadResources(); navigateToPage('browsePage', 'homeButton')"
+      >
         <input id="search" type="search" placeholder="Search" name="search" />
         <button type="submit">Search</button>
       </form>

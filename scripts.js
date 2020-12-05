@@ -290,4 +290,9 @@ function loadResources() {
     });
 }
 
+function clearSearch() {
+  document.getElementById('search').value = '';
+  loadResources();
+}
+
 console.log('Please enable javascript to run this webpage.');
