@@ -282,19 +282,28 @@ function navigateToMoviePage(movie) {
   navigateToPage('movieDetailsPage');
 }
 
+function filterMovie(movie, searchText) {
+  return Object.entries(movie)
+    .filter((keyValuePair) => !keyValuePair.includes('imagesrc'))
+    .map((keyValuePair) => keyValuePair[1])
+    .flat()
+    .reduce((includesSearchParameter, value) => {
+      return includesSearchParameter
+        ? includesSearchParameter
+        : value.toLowerCase().includes(searchText);
+    }, false);
+}
+
 function loadResources() {
   const searchText = document.getElementById('search').value;
   var browsePage = document.getElementById('browsePage');
   browsePage.innerHTML = '';
   movies
     .filter((movie) => {
-      if (!searchText) {
+      if (!searchText?.trim()) {
         return true;
       } else {
-        return (
-          movie.name.toLowerCase().includes(searchText.toLowerCase()) ||
-          movie.description.toLowerCase().includes(searchText.toLowerCase())
-        );
+        return filterMovie(movie, searchText.trim().toLowerCase());
       }
     })
     .sort((movieA, movieB) => {
