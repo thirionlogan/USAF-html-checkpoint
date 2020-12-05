@@ -201,6 +201,26 @@ const movies = [
     description:
       'A wealthy New York City investment banking executive, Patrick Bateman, hides his alternate psychopathic ego from his co-workers and friends as he delves deeper into his violent, hedonistic fantasies.',
   },
+  {
+    name: 'Spaceballs',
+    imagesrc:
+      'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4829/4829824_so.jpg',
+    released: '24 June 1987',
+    tags: ['Adventure', 'Comedy', 'Sci-Fi'],
+    cast: ['Mel Brooks', 'John Candy', 'Rick Moranis'],
+    description:
+      'A star pilot and his sidekick must come to the rescue of a Princess and save the galaxy from a ruthless race of beings known as Spaceballs.',
+  },
+  {
+    name: 'The Princess Bride',
+    imagesrc:
+      'https://www.docsdriveintheatre.com/wp-content/uploads/2019/08/gpxjoE0yvRwIhFEJgNArtKtaN7S.jpg',
+    released: '9 October 1987',
+    tags: ['Adventure', 'Family', 'Fantasy'],
+    cast: ['Cary Elwes', 'Mandy Patinkin', 'Robin Wright'],
+    description:
+      "While home sick in bed, a young boy's grandfather reads him the story of a farmboy-turned-pirate who encounters numerous obstacles, enemies and allies in his quest to be reunited with his true love.",
+  },
 ];
 
 function navigateToPage(page, buttonId) {
