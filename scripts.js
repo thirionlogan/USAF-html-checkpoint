@@ -282,7 +282,13 @@ function navigateToMoviePage(movie) {
   navigateToPage('movieDetailsPage');
 }
 
-function filterMovie(movie, searchText) {
+function filterMovies(movie) {
+  if (!document.getElementById('search').value?.trim()) return true;
+  const searchText = document
+    .getElementById('search')
+    .value.trim()
+    .toLowerCase();
+
   return Object.entries(movie)
     .filter((keyValuePair) => !keyValuePair.includes('imagesrc'))
     .map((keyValuePair) => keyValuePair[1])
@@ -294,32 +300,29 @@ function filterMovie(movie, searchText) {
     }, false);
 }
 
+function renderMovieTile(movie) {
+  var movieElement = document.createElement('img');
+  movieElement.src = movie.imagesrc;
+  movieElement.loading = 'lazy';
+  movieElement.alt = `${movie.name} poster`;
+  movieElement.onclick = () => navigateToMoviePage(movie);
+  browsePage.appendChild(movieElement);
+}
+
+function sortMoviesAlphabetically(movieA, movieB) {
+  return movieA.name.toLowerCase().replace('the', '').trim() >
+    movieB.name.toLowerCase().replace('the', '').trim()
+    ? 1
+    : -1;
+}
+
 function loadResources() {
-  const searchText = document.getElementById('search').value;
   var browsePage = document.getElementById('browsePage');
   browsePage.innerHTML = '';
   movies
-    .filter((movie) => {
-      if (!searchText?.trim()) {
-        return true;
-      } else {
-        return filterMovie(movie, searchText.trim().toLowerCase());
-      }
-    })
-    .sort((movieA, movieB) => {
-      return movieA.name.toLowerCase().replace('the', '').trim() >
-        movieB.name.toLowerCase().replace('the', '').trim()
-        ? 1
-        : -1;
-    })
-    .forEach((movie) => {
-      var movieElement = document.createElement('img');
-      movieElement.src = movie.imagesrc;
-      movieElement.loading = 'lazy';
-      movieElement.alt = `${movie.name} poster`;
-      movieElement.onclick = () => navigateToMoviePage(movie);
-      browsePage.appendChild(movieElement);
-    });
+    .filter(filterMovies)
+    .sort(sortMoviesAlphabetically)
+    .forEach(renderMovieTile);
 }
 
 function clearSearch() {
