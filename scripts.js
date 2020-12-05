@@ -227,7 +227,7 @@ function navigateToPage(page, buttonId) {
   pageNode.classList.remove('hide');
 
   var buttonNode = document.getElementById(buttonId);
-  buttonNode.classList.add('highlight');
+  buttonNode?.classList.add('highlight');
 }
 
 function navigateToMoviePage(movie) {
