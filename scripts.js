@@ -298,7 +298,10 @@ function loadResources() {
       }
     })
     .sort((movieA, movieB) => {
-      return movieA.name.toLowerCase() > movieB.name.toLowerCase() ? 1 : -1;
+      return movieA.name.toLowerCase().replace('the', '').trim() >
+        movieB.name.toLowerCase().replace('the', '').trim()
+        ? 1
+        : -1;
     })
     .forEach((movie) => {
       var movieElement = document.createElement('img');
