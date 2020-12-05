@@ -93,3 +93,7 @@ main {
 .hide {
   display: none;
 }
+
+.highlight {
+  outline: -webkit-focus-ring-color auto 1px;
+}

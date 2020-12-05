@@ -15,8 +15,19 @@
     <header class="pageHeader">
       <nav>
         <h1>GMDB</h1>
-        <button onclick="navigateToPage('browsePage')"><h3>Home</h3></button>
-        <button onclick="navigateToPage('loginPage')"><h3>Login</h3></button>
+        <button
+          id="homeButton"
+          onclick="navigateToPage('browsePage','homeButton')"
+        >
+          <h3>Home</h3>
+        </button>
+        <button
+          id="loginButton"
+          onclick="navigateToPage('loginPage','loginButton')"
+          class="highlight"
+        >
+          <h3>Login</h3>
+        </button>
       </nav>
       <form action="" target="dummyframe">
         <input type="search" placeholder="Search" />
@@ -40,7 +51,9 @@
       </form>
       <div id="browsePage" class="browsePage hide"></div>
       <div id="movieDetailsPage" class="movieDetailsPage hide">
-        <button onclick="navigateToPage('browsePage')">Back to results</button>
+        <button onclick="navigateToPage('browsePage', 'homeButton')">
+          Back to results
+        </button>
         <div id="movieDetails" class="movieDetails"></div>
         <form action="" target="dummyframe">
           <label for="comment">Leave a comment:</label><br />

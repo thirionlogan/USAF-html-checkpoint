@@ -203,8 +203,10 @@ const movies = [
   },
 ];
 
-function navigateToPage(page) {
+function navigateToPage(page, buttonId) {
+  const buttons = ['homeButton', 'loginButton'];
   const pages = ['loginPage', 'browsePage', 'movieDetailsPage'];
+
   pages
     .filter((value) => {
       return page !== value;
@@ -212,8 +214,20 @@ function navigateToPage(page) {
     .forEach((elementId) => {
       document.getElementById(elementId).classList.add('hide');
     });
+
+  buttons
+    .filter((iD) => {
+      return buttonId !== iD;
+    })
+    .forEach((elementId) => {
+      document.getElementById(elementId).classList.remove('highlight');
+    });
+
   var pageNode = document.getElementById(page);
   pageNode.classList.remove('hide');
+
+  var buttonNode = document.getElementById(buttonId);
+  buttonNode.classList.add('highlight');
 }
 
 function navigateToMoviePage(movie) {
