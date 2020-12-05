@@ -221,6 +221,35 @@ const movies = [
     description:
       "While home sick in bed, a young boy's grandfather reads him the story of a farmboy-turned-pirate who encounters numerous obstacles, enemies and allies in his quest to be reunited with his true love.",
   },
+  {
+    name: 'Indiana Jones and the Temple of Doom',
+    imagesrc:
+      'https://www.dvdsreleasedates.com/posters/800/I/Indiana-Jones-and-the-Temple-of-Doom-movie-poster.jpg',
+    released: '23 May 1984',
+    tags: ['Action', 'Adventure'],
+    cast: ['Harrison Ford', 'Kate Capshaw', 'Ke Huy Quan'],
+    description:
+      'In 1935, Indiana Jones arrives in India, still part of the British Empire, and is asked to find a mystical stone. He then stumbles upon a secret cult committing enslavement and human sacrifices in the catacombs of an ancient palace.',
+  },
+  {
+    name: 'Raiders of the Lost Ark',
+    imagesrc:
+      'https://images-na.ssl-images-amazon.com/images/I/81KFojJZnSL._AC_SL1500_.jpg',
+    released: '12 June 1981',
+    tags: ['Action', 'Adventure'],
+    cast: ['Harrison Ford', 'Karen Allen', 'Paul Freeman'],
+    description:
+      "In 1936, archaeologist and adventurer Indiana Jones is hired by the U.S. government to find the Ark of the Covenant before Adolf Hitler's Nazis can obtain its awesome powers.",
+  },
+  {
+    name: 'Indiana Jones and the Last Crusade',
+    imagesrc:
+      'https://alchetron.com/cdn/Indiana-Jones-and-the-Last-Crusade-images-e174c710-e1b2-4133-b422-a9180e95730.jpg',
+    released: '24 May 1989',
+    tags: ['Action', 'Adventure'],
+    cast: ['Harrison Ford', 'Sean Connery', 'Alison Doody'],
+    description: `In 1938, after his father Professor Henry Jones, Sr. goes missing while pursuing the Holy Grail, Professor Henry "Indiana" Jones, Jr. finds himself up against Adolf Hitler's Nazis again to stop them from obtaining its powers.`,
+  },
 ];
 
 function navigateToPage(page, buttonId) {
