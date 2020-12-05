@@ -29,8 +29,14 @@
           <h3>Login</h3>
         </button>
       </nav>
-      <form action="" target="dummyframe">
-        <input type="search" placeholder="Search" />
+      <form action="" target="dummyframe" onsubmit="loadResources()">
+        <input
+          id="search"
+          type="search"
+          placeholder="Search"
+          name="search"
+          required
+        />
         <button type="submit">Search</button>
       </form>
     </header>

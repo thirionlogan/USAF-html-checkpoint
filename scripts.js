@@ -283,14 +283,28 @@ function shuffle(array) {
 }
 
 function loadResources() {
-  shuffle(movies).forEach((movie) => {
-    var movieElement = document.createElement('img');
-    movieElement.src = movie.imagesrc;
-    movieElement.loading = 'lazy';
-    movieElement.alt = `${movie.name} poster`;
-    movieElement.onclick = () => navigateToMoviePage(movie);
-    document.getElementById('browsePage').appendChild(movieElement);
-  });
+  const searchText = document.getElementById('search').value;
+  var browsePage = document.getElementById('browsePage');
+  browsePage.innerHTML = '';
+  movies
+    .filter((movie) => {
+      if (!searchText) {
+        return true;
+      } else {
+        return (
+          movie.name.toLowerCase().includes(searchText.toLowerCase()) ||
+          movie.description.toLowerCase().includes(searchText.toLowerCase())
+        );
+      }
+    })
+    .forEach((movie) => {
+      var movieElement = document.createElement('img');
+      movieElement.src = movie.imagesrc;
+      movieElement.loading = 'lazy';
+      movieElement.alt = `${movie.name} poster`;
+      movieElement.onclick = () => navigateToMoviePage(movie);
+      browsePage.appendChild(movieElement);
+    });
 }
 
 console.log('Please enable javascript to run this webpage.');
