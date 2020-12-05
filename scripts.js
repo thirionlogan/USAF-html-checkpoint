@@ -280,6 +280,14 @@ function toggleClassOnElementGroup(
   node?.classList.toggle(cssClassSelector, force);
 }
 
+function navigateToMoviePage(movie) {
+  var movieDetails = document.getElementById('movieDetails');
+  movieDetails.innerHTML = '';
+  renderPoster(movie);
+  renderMovieDataSection(movie);
+  navigateToPage('movieDetailsPage');
+}
+
 function renderPoster(movie) {
   var movieImage = document.createElement('img');
   movieImage.loading = 'lazy';
@@ -309,12 +317,13 @@ function renderMovieDataSection(movie) {
   movieMeta.appendChild(movieDescription);
 }
 
-function navigateToMoviePage(movie) {
-  var movieDetails = document.getElementById('movieDetails');
-  movieDetails.innerHTML = '';
-  renderPoster(movie);
-  renderMovieDataSection(movie);
-  navigateToPage('movieDetailsPage');
+function loadResources() {
+  var browsePage = document.getElementById('browsePage');
+  browsePage.innerHTML = '';
+  movies
+    .filter(filterMovies)
+    .sort(sortMoviesAlphabetically)
+    .forEach(renderMovieTile);
 }
 
 function filterMovies(movie) {
@@ -335,15 +344,6 @@ function filterMovies(movie) {
     }, false);
 }
 
-function renderMovieTile(movie) {
-  var movieElement = document.createElement('img');
-  movieElement.src = movie.imagesrc;
-  movieElement.loading = 'lazy';
-  movieElement.alt = `${movie.name} poster`;
-  movieElement.onclick = () => navigateToMoviePage(movie);
-  browsePage.appendChild(movieElement);
-}
-
 function sortMoviesAlphabetically(movieA, movieB) {
   return movieA.name.toLowerCase().replace('the', '').trim() >
     movieB.name.toLowerCase().replace('the', '').trim()
@@ -351,13 +351,13 @@ function sortMoviesAlphabetically(movieA, movieB) {
     : -1;
 }
 
-function loadResources() {
-  var browsePage = document.getElementById('browsePage');
-  browsePage.innerHTML = '';
-  movies
-    .filter(filterMovies)
-    .sort(sortMoviesAlphabetically)
-    .forEach(renderMovieTile);
+function renderMovieTile(movie) {
+  var movieElement = document.createElement('img');
+  movieElement.src = movie.imagesrc;
+  movieElement.loading = 'lazy';
+  movieElement.alt = `${movie.name} poster`;
+  movieElement.onclick = () => navigateToMoviePage(movie);
+  browsePage.appendChild(movieElement);
 }
 
 function clearSearch() {
