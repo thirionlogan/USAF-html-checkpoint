@@ -227,27 +227,28 @@ function navigateToPage(page, buttonId) {
   const buttons = ['homeButton', 'loginButton'];
   const pages = ['loginPage', 'browsePage', 'movieDetailsPage'];
 
-  pages
-    .filter((value) => {
-      return page !== value;
+  toggleClassOnElementGroup(page, pages, 'hide', false);
+  toggleClassOnElementGroup(buttonId, buttons, 'highlight', true);
+}
+
+function toggleClassOnElementGroup(
+  exceptionalElementId,
+  elementIds,
+  cssClassSelector,
+  force
+) {
+  elementIds
+    .filter((elementId) => {
+      return exceptionalElementId !== elementId;
     })
     .forEach((elementId) => {
-      document.getElementById(elementId).classList.add('hide');
+      document
+        .getElementById(elementId)
+        .classList.toggle(cssClassSelector, !force);
     });
 
-  buttons
-    .filter((iD) => {
-      return buttonId !== iD;
-    })
-    .forEach((elementId) => {
-      document.getElementById(elementId).classList.remove('highlight');
-    });
-
-  var pageNode = document.getElementById(page);
-  pageNode.classList.remove('hide');
-
-  var buttonNode = document.getElementById(buttonId);
-  buttonNode?.classList.add('highlight');
+  var node = document.getElementById(exceptionalElementId);
+  node?.classList.toggle(cssClassSelector, force);
 }
 
 function renderPoster(movie) {
