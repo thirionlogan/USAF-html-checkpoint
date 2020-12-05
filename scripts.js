@@ -252,7 +252,7 @@ const movies = [
   },
 ];
 
-function navigateToPage(page, buttonId) {
+function navigateToPage(page = '', buttonId = '') {
   const buttons = ['homeButton', 'loginButton'];
   const pages = ['loginPage', 'browsePage', 'movieDetailsPage'];
 
