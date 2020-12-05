@@ -250,16 +250,15 @@ function navigateToPage(page, buttonId) {
   buttonNode?.classList.add('highlight');
 }
 
-function navigateToMoviePage(movie) {
-  var movieDetails = document.getElementById('movieDetails');
-  movieDetails.innerHTML = '';
-
+function renderPoster(movie) {
   var movieImage = document.createElement('img');
   movieImage.loading = 'lazy';
   movieImage.alt = `${movie.name} poster`;
   movieImage.src = movie.imagesrc;
   movieDetails.appendChild(movieImage);
+}
 
+function renderMovieDataSection(movie) {
   var movieMeta = document.createElement('DIV');
   movieDetails.appendChild(movieMeta);
 
@@ -278,7 +277,13 @@ function navigateToMoviePage(movie) {
   var movieDescription = document.createElement('P');
   movieDescription.innerText = movie.description;
   movieMeta.appendChild(movieDescription);
+}
 
+function navigateToMoviePage(movie) {
+  var movieDetails = document.getElementById('movieDetails');
+  movieDetails.innerHTML = '';
+  renderPoster(movie);
+  renderMovieDataSection(movie);
   navigateToPage('movieDetailsPage');
 }
 
